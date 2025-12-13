@@ -1,0 +1,55 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+#define fast ios::sync_with_stdio(false); cin.tie(nullptr);
+
+#define int long long
+#define pb push_back
+#define vi vector<int>
+#define vii vector<pair<int,int>>
+#define rep(i,a,b) for(int i = (a); i < (b); i++)
+
+// ===== GCD =====
+int gcd(int a, int b) {
+    return (b == 0 ? a : gcd(b, a % b));
+}
+
+// ===== LCM =====
+int lcm(int a, int b) {
+    return (a / gcd(a, b)) * b;
+}
+
+// ===== PRIME CHECK =====
+bool isPrime(int n) {
+    if(n < 2) return false;
+    if(n % 2 == 0) return n == 2;
+    for(int i = 3; i * i <= n; i += 2)
+        if(n % i == 0) return false;
+    return true;
+}
+
+// ===== SOLVE FUNCTION =====
+void solve() {
+	int n,mini=LLONG_MAX; cin>>n;
+	vi a(n+1);
+	a[0]=LLONG_MIN;
+	rep(i,1,n+1) {cin>>a[i]; if(a[i]<0) a[i]=-1*a[i];}
+	int first=a[1];
+	sort(a.begin()+1,a.end());
+	if(a[(n+1)/2]>=first){
+		cout<<"YES"<<endl;
+	}
+	else if(n%2==0 and a[(n+1)/2+1]>=first) cout<<"YES"<<endl;
+	else cout<<"NO"<<endl;
+}
+
+int32_t main() {
+    fast;
+
+    int t = 1;
+    cin >> t;
+    while(t--) solve();
+
+    return 0;
+}
+
