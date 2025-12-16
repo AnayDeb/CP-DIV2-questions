@@ -32,7 +32,7 @@ bool isPrime(int n) {
 void solve() {
 	int l,w,a,b,x1,y1,x2,y2;
 	cin>>l>>w>>a>>b>>x1>>y1>>x2>>y2;
-	/*
+	
 	if(x1==x2) {
 		if(abs(y2-y1)%b==0) cout<<"Yes"<<endl;
 		else cout<<"No"<<endl;
@@ -43,7 +43,7 @@ void solve() {
 		else cout<<"No"<<endl;
 		return;
 	}
-	*/
+	
 	if(abs(x2-x1)%a==0 or abs(y2-y1)%b==0) cout<<"Yes"<<endl;
 	else cout<<"No"<<endl;
 }
